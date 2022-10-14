@@ -3,16 +3,12 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import axios from 'axios'
 
-function SearchMovies(){
-	const [state, setState] = useState([]);
-    const [keyword, setKeyword]= useState('')
+function SearchToys(){
 	
-	const movies =  async () => {
-		const json = await axios(`http://www.omdbapi.com/?s=${keyword}&apikey=f2cdab72`);//pego a mi api
-		
-		setState(json.data.Search);//guardo los datos en mi estado (state)
-	}
+	let [results, setResults] = useState([]);
+    let [keyword, setKeyword]= useState('')
 	
+
 	
 const handelInputChange = (e)=>{
 	e.preventDefault();
@@ -24,31 +20,41 @@ const handelInputChange = (e)=>{
 		
 	};
 
+	const products =  async () => {
+		const json = await axios("http://localhost:3001/api/products")
+		let resultados = json.data.products.filter(element => {
+										return element.name.toLowerCase().includes(`${keyword}`)})
+			setResults(resultados)
+				console.log(keyword)
+				console.log(resultados)
+				
+		}
+{/*	const handleResults = async () => {
+		products.filter(e => e.name === keyword)
+
+	}}
+*/}
+			
+	
+
 
 	useEffect(() => {
-		movies();//cuando se monta el componente llamo a mi api
+	products();
+	//cuando se monta el componente llamo a mi api
 	 }, 
-	 []);
+	 [setResults,keyword]);
 	
-
-
-
-	
-
-	// Credenciales de API
-	const apiKey = 'f2cdab72'; // Intenta poner cualquier cosa antes para probar
 
 	return(
 		<div className="container-fluid">
 			{
-				apiKey !== '' ?
 				<>
 					<div className="row my-4">
 						<div className="col-12 col-md-6">
 							{/* Buscador */}
 							<form method="GET">
 								<div className="form-group">
-									<label htmlFor="">Buscar por título:</label>
+									<label htmlFor="">Buscar por Juguete:</label>
 									<input type="text" className="form-control" onChange={(e) => handelInputChange(e)}/>
 								</div>
 								<button className="btn btn-info"  onClick={(e) => handelSubmit(e)}>Search</button>
@@ -57,27 +63,27 @@ const handelInputChange = (e)=>{
 					</div>
 					<div className="row">
 						<div className="col-12">
-							<h2>Películas para la palabra: {keyword}</h2>
+							<h2>Juguetes para la palabra: {keyword}</h2>
 						</div>
 						{/* Listado de películas */}
 						{
-							state && state?.map((movie, i) => {
+							results && keyword && results?.map((toy, i) => {
 								return (
 									<div className="col-sm-6 col-md-3 my-4" key={i}>
 										<div className="card shadow mb-4">
 											<div className="card-header py-3">
-												<h5 className="m-0 font-weight-bold text-gray-800">{movie.Title}</h5>
+												<h5 className="m-0 font-weight-bold text-gray-800">{toy.name}</h5>
 											</div>
 											<div className="card-body">
 												<div className="text-center">
 													<img 
-														className="img-fluid px-3 px-sm-4 mt-3 mb-4" 
-														src={movie.Poster}
-														alt={movie.Title} 
-														style={{ width: '90%', height: '400px', objectFit: 'cover' }} 
+														className="img-fluid px-3 px-sm-1 mt-3 mb-4" 
+														src={toy.img}
+														alt={toy.name} 
+														style={{ width: '100%', height: '150px', objectFit: 'cover' }} 
 													/>
 												</div>
-												<p>{movie.Year}</p>
+												<p>{toy.price}</p>
 											</div>
 										</div>
 									</div>
@@ -85,13 +91,14 @@ const handelInputChange = (e)=>{
 							})
 						}
 					</div>
-					{ state && <div className="alert alert-warning text-center">No se encontraron películas</div>}
+					{ results && <div className="alert alert-warning text-center">No se encontraron juguetes</div>}
 				</>
-				:
-				<div className="alert alert-danger text-center my-4 fs-2">Eyyyy... ¿PUSISTE TU APIKEY?</div>
+					
+
+				
 			}
 		</div>
 	)
 }
 
-export default SearchMovies;
+export default SearchToys;

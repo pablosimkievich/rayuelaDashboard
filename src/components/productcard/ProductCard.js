@@ -7,21 +7,16 @@ import {link} from 'react-router-dom'
 function ProductCard(props){
     return (
 		<>
-			<img src={`/img/products/${props.img}`} alt={`${props.id}`}/>
-				<h3>
-					{${props.name}}
-				</h3>
-					<p>
-						ID:{${props.id}}
-					</p>
-
-						<div className="form-buttons">
-								<button type="submit" className="form-button">EDIT</button>
-	
-								<form action={`localhost:3001/${props.id}?_method=DELETE`} method="POST">
-										<button type="submit" className="form-button">DELETE</button>
-								</form>
-						</div>
+			  <article class="producto">
+                <a href="/juguetes/<%= e.id %>">
+                    <img src="/img/products/<%= e.principal_img %>" alt="banco">
+                    <h3> {props.name} </h3>
+                </a>
+                <p>$  <%= e.price %> </p>
+                
+                <input value="<%=e.id%>" class='input-carrito' style="display:none;"><button type="submit" class="add-to-cart-button">AGREGAR AL CARRITO<i class="fa-solid fa-bag-shopping"></i></button></input>
+                
+            </article>
 		
 		</>
 	)

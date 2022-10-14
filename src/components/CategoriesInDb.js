@@ -13,50 +13,52 @@ function CategoriesInDb() {
       }
     
 
+  
       useEffect(() => {
-        
-      
-      }, []);
-
-      useEffect(() => {
-        getCategorias() 
+        if(!categorias){
+          getCategorias()
+        }
         console.log(categorias) 
         console.log('hola')
-    }, [setCategorias]);
+    }, [categorias]);
 
   return (
-    <div className="col-lg-6 mb-4">
+   
+     <div className="col-lg-6 mb-4">
       <div className="card shadow mb-4">
         <div className="card-header py-3">
           <h5 className="m-0 font-weight-bold text-gray-800">
           Categorias
           </h5>
         </div>
+
+      {  categorias && categorias? 
         <div className="card-body">
           <div className="row">
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Sensoriales:</div>
+                <div className="card-body">Sensoriales: {categorias.sensoriales} u.</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Musicales</div>
+                <div className="card-body">Musicales: {categorias.musicales} u.</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Ingenio</div>
+                <div className="card-body">Ingenio: {categorias.ingenio} u.</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Movimiento</div>
+                <div className="card-body">Movimiento: {categorias.movimientos} u.</div>
               </div>
             </div>
             
           </div>
         </div>
+       :null }
       </div>
     </div>
   );

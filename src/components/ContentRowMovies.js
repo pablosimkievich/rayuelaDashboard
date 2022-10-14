@@ -7,7 +7,7 @@ import SmallCard from './SmallCard';
 
 let moviesInDB = {
     title: 'Movies in Data Base',
-    color: 'primary', 
+    color: 'success', 
     cuantity: 21,
     icon: 'fa-clipboard-list'
 }
@@ -25,7 +25,7 @@ let totalAwards = {
 
 let actorsQuantity = {
     title:'Actors quantity' ,
-    color:'warning',
+    color:'success',
     cuantity:'49',
     icon:'fa-user-check'
 }

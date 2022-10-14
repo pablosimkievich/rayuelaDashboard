@@ -12,22 +12,22 @@ function GenresInDb() {
         <div className="card-body">
           <div className="row">
             <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
+              <div className="card bg-info text-white shadow">
                 <div className="card-body">Sensoriales</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
+              <div className="card bg-info text-white shadow">
                 <div className="card-body">Musicales</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
+              <div className="card bg-info text-white shadow">
                 <div className="card-body">Ingenio</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
+              <div className="card bg-info text-white shadow">
                 <div className="card-body">Movimiento</div>
               </div>
             </div>

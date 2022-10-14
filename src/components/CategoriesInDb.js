@@ -1,6 +1,29 @@
 import React from "react";
+import {useState, useEffect} from 'react';
+import axios from 'axios';
 
-function GenresInDb() {
+
+function CategoriesInDb() {
+  const [categorias, setCategorias] = useState();
+
+    const getCategorias =  async () => {
+        const json = await axios("http://localhost:3001/api/products");//pego a mi api
+        
+        setCategorias(json.data.countByCategory);
+      }
+    
+
+      useEffect(() => {
+        
+      
+      }, []);
+
+      useEffect(() => {
+        getCategorias() 
+        console.log(categorias) 
+        console.log('hola')
+    }, [setCategorias]);
+
   return (
     <div className="col-lg-6 mb-4">
       <div className="card shadow mb-4">
@@ -13,7 +36,7 @@ function GenresInDb() {
           <div className="row">
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Sensoriales</div>
+                <div className="card-body">Sensoriales:</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
@@ -39,4 +62,4 @@ function GenresInDb() {
   );
 }
 
-export default GenresInDb;
+export default CategoriesInDb;

@@ -1,8 +1,8 @@
 import React from 'react';
 import ContentWrapper from './ContentWrapper';
-import GenresInDb from './GenresInDb';
+import CategoriesInDb from './CategoriesInDb';
 import LastToyInDb from './LastToyInDb';
-import ContentRowToys from './ContentRowToys';
+import ContentRowDataCards from './ContentRowDataCards';
 import NotFound from './NotFound';
 import SideBar from './SideBar';
 import {BrowserRouter,Routes, Route} from 'react-router-dom';
@@ -17,9 +17,10 @@ function App() {
      <SideBar /> 
           <Routes>
             <Route exact path="/"  element={<ContentWrapper />}></Route>
-            <Route path="/GenresInDb" element={<GenresInDb />}></Route>
+            <Route path="/ProductsInDb" element={<CategoriesInDb />}></Route>
+            <Route path="/CategoriesInDb" element={<CategoriesInDb />}></Route>
             <Route path="/LastMovieInDb" element={<LastToyInDb />}></Route>
-            <Route path="/ContentRowToys" element={<ContentRowToys />}></Route>
+            <Route path="/ContentRowDataCards" element={<ContentRowDataCards />}></Route>
             <Route path="/SearchResults" element={<SearchToys/>}></Route>
             <Route path='*' element={NotFound} />
             

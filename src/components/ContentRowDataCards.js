@@ -3,7 +3,7 @@ import SmallCard from './SmallCard';
 import axios from 'axios';
 
 
-function ContentRowToys(){
+function ContentRowDataCards(){
     const [juguetes, setJuguetes] = useState([]);
     const [users, setUsers] = useState([]);
     const [orders, setOrders] = useState([]);
@@ -57,15 +57,15 @@ function ContentRowToys(){
         icon:'fa-user-check'
     }
     
-    let cartProps = [salesInDB, productsInDB, usersInDB];
+    let dataCardProps = [salesInDB, productsInDB, usersInDB];
 
     return (
     
         <div className="row">
             
-            {cartProps.map( (movie, i) => {
+            {dataCardProps.map( (element, i) => {
 
-                return <SmallCard {...movie} key={i}/>
+                return <SmallCard {...element} key={i}/>
             
             })}
 
@@ -73,4 +73,4 @@ function ContentRowToys(){
     )
 }
 
-export default ContentRowToys;
+export default ContentRowDataCards;

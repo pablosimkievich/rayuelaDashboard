@@ -1,104 +1,28 @@
 import React from 'react';
 //import noPoster from '../assets/images/no-poster.jpg';
 import {useState, useEffect} from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import {link} from 'react-router-dom'
 
-function ProductCard (){
-	
-	let [results, setResults] = useState([]);
-    let [keyword, setKeyword]= useState('')
-	
-
-	
-const handelInputChange = (e)=>{
-	e.preventDefault();
-	setKeyword(e.target.value)
-}
-
-	const handelSubmit = (e)=>{
-		e.preventDefault();
+function ProductCard(props){
+    return (
+		<>
+			  <article class="producto">
+                <a href="/juguetes/<%= e.id %>">
+                    <img src="/img/products/<%= e.principal_img %>" alt="banco">
+                    <h3> {props.name} </h3>
+                </a>
+                <p>$  <%= e.price %> </p>
+                
+                <input value="<%=e.id%>" class='input-carrito' style="display:none;"><button type="submit" class="add-to-cart-button">AGREGAR AL CARRITO<i class="fa-solid fa-bag-shopping"></i></button></input>
+                
+            </article>
 		
-	};
-
-	const products =  async () => {
-		const json = await axios("http://localhost:3001/api/products")
-		let resultados = json.data.products.filter(element => {
-										return element.name.toLowerCase().includes(`${keyword}`)})
-			setResults(resultados)
-				console.log(keyword)
-				console.log(resultados)
-				
-		}
-{/*	const handleResults = async () => {
-		products.filter(e => e.name === keyword)
-
-	}}
-*/}
-			
-	
-
-
-	useEffect(() => {
-	products();
-	//cuando se monta el componente llamo a mi api
-	 }, 
-	 [setResults,keyword]);
-	
-
-	return(
-		<div className="container-fluid">
-			{
-				<>
-					<div className="row my-4">
-						<div className="col-12 col-md-6">
-							{/* Buscador */}
-							<form method="GET">
-								<div className="form-group">
-									<label htmlFor="">Buscar por Juguete:</label>
-									<input type="text" className="form-control" onChange={(e) => handelInputChange(e)}/>
-								</div>
-								<button className="btn btn-info"  onClick={(e) => handelSubmit(e)}>Search</button>
-							</form>
-						</div>
-					</div>
-					<div className="row">
-						<div className="col-12">
-							<h2>Juguetes para la palabra: {keyword}</h2>
-						</div>
-						{/* Listado de películas */}
-						{
-							results && keyword && results?.map((toy, i) => {
-								return (
-									<div className="col-sm-6 col-md-3 my-4" key={i}>
-										<div className="card shadow mb-4">
-											<div className="card-header py-3">
-												<h5 className="m-0 font-weight-bold text-gray-800">{toy.name}</h5>
-											</div>
-											<div className="card-body">
-												<div className="text-center">
-													<img 
-														className="img-fluid px-3 px-sm-1 mt-3 mb-4" 
-														src={toy.img}
-														alt={toy.name} 
-														style={{ width: '100%', height: '150px', objectFit: 'cover' }} 
-													/>
-												</div>
-												<p>{toy.price}</p>
-											</div>
-										</div>
-									</div>
-								)
-							})
-						}
-					</div>
-					{ results && <div className="alert alert-warning text-center">No se encontraron juguetes</div>}
-				</>
-					
-
-				
-			}
-		</div>
+		</>
 	)
-}
+			
+    	
+	};
+	
 
 export default ProductCard;

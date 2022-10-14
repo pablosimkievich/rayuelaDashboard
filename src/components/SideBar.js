@@ -35,7 +35,7 @@ function SideBar(){
                 <li className="nav-item">
                 <Link className="nav-link" to={"/GenresInDb"}>
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
+                        <span>Productos</span>
                     </Link>
                 </li>
 
@@ -43,7 +43,7 @@ function SideBar(){
                 <li className="nav-item">
                     <Link className="nav-link" to={"/LastMovieInDb"}>
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></Link>
+                        <span>Ordenes de Compra</span></Link>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}

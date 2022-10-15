@@ -5,6 +5,7 @@ import LastToyInDb from './LastToyInDb';
 import ContentRowDataCards from './ContentRowDataCards';
 import NotFound from './NotFound';
 import SideBar from './SideBar';
+import Products from './Products'
 import {BrowserRouter,Routes, Route} from 'react-router-dom';
 import SearchToys from './SearchToys';
 import '.././assets/css/app.css'
@@ -17,7 +18,7 @@ function App() {
      <SideBar /> 
           <Routes>
             <Route exact path="/"  element={<ContentWrapper />}></Route>
-            <Route path="/ProductsInDb" element={<CategoriesInDb />}></Route>
+            <Route path="/Products" element={<Products />}></Route>
             <Route path="/CategoriesInDb" element={<CategoriesInDb />}></Route>
             <Route path="/LastMovieInDb" element={<LastToyInDb />}></Route>
             <Route path="/ContentRowDataCards" element={<ContentRowDataCards />}></Route>

@@ -9,7 +9,7 @@ function ContentRowTop(){
 				{/*<!-- Content Row Top -->*/}
 				<div className="container-fluid">
 					<div className="d-sm-flex aligns-items-center justify-content-around mb-4">
-						<h1 className="h3 mb-1 text-gray-900">Dashboard Rayuela</h1>
+						<h1 className="h3 m-4 text-gray-900">Dashboard Rayuela</h1>
 					</div>
 				
 					{/*<!-- Content Row Movies-->*/}

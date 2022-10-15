@@ -15,8 +15,10 @@ const getToys =  async () => {
 	useEffect(() => {
          
 			getToys();
+		 
+			
+           
 console.log(toys)
-
     }, [toys]);
 
 
@@ -28,13 +30,13 @@ console.log(toys)
 				toys && toys?.map((e, i) =>{
 						return(
 				<div clas Name="producto" key={i}>
-					<a href={e.detail} target="_blank">
+					<a href={e.detail} target="_blank" rel="noreferrer">
 						<img src={e.img} alt="juguete" className="producto-image"/>
 						<h3> {e.name} </h3>
 					</a>
 				
 					<p>{e.price} </p>
-					<a href={`http://localhost:3001/edit/${e.id}`} target='_blank'>
+					<a href={`http://localhost:3001/edit/${e.id}`} rel="noreferrer" target='_blank'>
 					<button type="submit" className="add-to-cart-button">
 					EDITAR<i className="fa-solid fa-bag-shopping"></i>
 					</button>

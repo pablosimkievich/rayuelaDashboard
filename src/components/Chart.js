@@ -1,27 +1,25 @@
 import React from 'react';
 import ChartRow from './ChartRow';
+import {useState, useEffect} from 'react';
+import axios from 'axios';
 
-let tableRowsData = [
-    {
-        Title: 'Billy Elliot ',
-        Length: '123',
-        Rating: '5',
-        Categories: ['Drama','Comedia'],
-        Awards: 2
-    },
-    {
-        Title: 'Alicia en el país de las maravillas',
-        Length: '142',
-        Rating: '4.8',
-        Categories: ['Drama','Acción','Comedia'],
-        Awards: 3
-    },
-    
-]
+
 
 
 function Chart (){
+    const [data, setData] = useState([]);
+    const products =  async () => {
+        const json = await axios("http://localhost:3001/api/products");//pego a mi api
+            {/* console.log(json) */}
+        setData(json.data.products);};
+
+        useEffect(() => {
+            products();
+            console.log(data)
+        }, [setData]);
+
     return (
+     
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
             <div className="card-body">
@@ -29,30 +27,49 @@ function Chart (){
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>Título</th>
-                                <th>Duración</th>
-                                <th>Rating</th>
-                                <th>Género</th>
-                                <th>Premios</th>
+                                <th>id</th>
+                                <th>Nombre</th>
+                                <th>Imagen</th>
+                                <th>Precio</th>
+                                <th>Rango edad</th>
+                                <th>Categoias</th>
+                                <th>Descripcion</th>
+                                <th>Editar</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Título</th>
-                                <th>Duración</th>
-                                <th>Rating</th>
-                                <th>Género</th>
-                                <th>Premios</th>
-                            </tr>
-                        </tfoot>
+                        
                         <tbody>
-                            {
-                            tableRowsData.map( ( row , i) => {
-                                return <ChartRow { ...row} key={i}/>
+                             {
+                            data.map( ( e , i) => {
+                                let row = {
+                                    Id: e.id, 
+                                    Name: e.name, 
+                                    Img: e.img,
+                                    Price: e.price,
+                                    Age: e.age, 
+                                    Categories: e.category,
+                                    Description: e.description,
+                                    Edit: `http://localhost:3001/edit/${e.id}`
+                                }
+                                return <ChartRow {
+                                    ...row} key={i}/>
                             })
                             }
-
+                            
                         </tbody>
+
+                        <tfoot>
+                            <tr>
+                                <th>id</th>
+                                <th>Nombre</th>
+                                <th>Imagen</th>
+                                <th>Precio</th>
+                                <th>Rango Edad</th>
+                                <th>Categorias</th>
+                                <th>Descripcion</th>
+                                <th>Editar</th>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>

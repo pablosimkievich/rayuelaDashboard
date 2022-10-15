@@ -1,3 +1,6 @@
+.chart-img {
+    width: 50pc;
+}
 .containerProduct {
     display: flex;
     flex-direction: row;

@@ -1,6 +1,6 @@
 import React from 'react';
 // import {link} from 'react-router-dom';
-import ProductCard from '../ProductCard';
+// import ProductCard from '../ProductCard';
 
 
 import {useEffect, useState} from 'react';
@@ -28,9 +28,7 @@ console.log(toys)
     return (
 
 		<>
-			<ProductCard 
-            
-            />
+			
 
 	
 			<article className="containerProduct">
@@ -44,7 +42,7 @@ console.log(toys)
 					</a>
 				
 					<p>{e.price} </p>
-					<a href={`http://localhost:3001/edit/${e.id}`} target='_blank'>
+					<a href={`http://localhost:3001/edit/${e.id}`} target='blank'>
 					<button type="submit" className="add-to-cart-button">
 					EDITAR<i className="fa-solid fa-bag-shopping"></i>
 					</button>

@@ -48,7 +48,7 @@ function ContentRowDataCards(){
         icon:'fa-award'
     }
     
-    
+
     
     let usersInDB = {
         title:'Usuarios en Data Base' ,

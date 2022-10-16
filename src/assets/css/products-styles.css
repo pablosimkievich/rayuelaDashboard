@@ -1,93 +1,29 @@
-.chart-img {
-    width: 50pc;
-}
-.containerProduct {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width:100%;
-}
+.stars-outer {
+    display: inline-block;
+    position: relative;
+    font-family: FontAwesome;
+    font-size: 22px;
+  }
 
-.producto {
-    width: 20%;
-    border-radius: 5px;
-    margin: 25px 10px;
-    padding: 5px;
-    justify-content: space-around;
-    object-fit: contain;
-    display: flex;
-    flex-direction: row;
+  .stars-outer::before {
+    content: "\f006 \f006 \f006 \f006 \f006";
+    color: rgb(225,132,51);
+  }
    
+  .stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width:0;
+   
+  }
+   
+  .stars-inner::before {
+    font-family: FontAwesome;
+    font-size: 22px;
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: rgb(255,164,28);
     
-}
-
-.producto-image {
-    width: 30%;
-    border-radius: 5px;
-    transition: all 700ms;
-    vertical-align: top;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin: 15px 0px;
-}
-
-.producto h3 {
-    color: #142D4C;
-}
-
-.producto h3, p {
-    text-align: center;  
-}
-
-.producto p {
-    color: #C9753D;
-}
-
-
-.producto a {
-    text-decoration: none;
-}
-
-.producto a:visited {
-    color: #7D7D7D;
-}
-
-.producto img:hover {
-    opacity: 0.6;
-    background-color: white;
-    transform: scale(1.07);  
-    /*background-color:  rgb(131, 131, 150, 0.3);*/
-    border-radius: 15px; 
-}
-
-.add-to-cart-button {
-    background-color: #056676;
-    /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
-    text-align: center;
-    align-items: center;
-    border-radius: 3px;
-    justify-content: center;
-    border: none;
-    font-size: 12x;
-    font-weight: 400;
-    margin: 10px;
-    padding: 5px;
-    display: flex;
-    transition: all 0.3s;
-    color: #A3D2CA;
-}
-
-.add-to-cart-button i {
-    margin: 10px;
-}
-.add-to-cart-button:hover {
-    background-color: #D45D79;
-    color: #424874;    
-}
-
-.add-to-cart-button:active {
-    transform: scale(1.05);
-    /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
-}
+  }

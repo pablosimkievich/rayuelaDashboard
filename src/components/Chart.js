@@ -49,6 +49,7 @@ function Chart (){
                                     Name: e.name, 
                                     Img: e.img,
                                     Price: e.price,
+                                    TotalReviews: e.ratings.length,
                                     Rating: e.ratings.length>0?e.ratings.reduce((pv,cv)=> pv + cv)/e.ratings.length: "No reviews",
                                     Age: e.age, 
                                     Categories: e.category,

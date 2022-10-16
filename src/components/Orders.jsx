@@ -39,7 +39,7 @@ function Orders (){
                         </thead>
                       
                         <tbody>
-                           {
+                    {/*     {
                             ordersData.map( ( element , i) => {
                                 let orderRow = {
                                     Id: element.id,
@@ -50,10 +50,11 @@ function Orders (){
                                     MPago: element.pay_method_id,
                                 }
                                 console.log(orderRow)
-                                return < ChartOrderRow {...orderRow} key={i}/>
+                                return <ChartOrderRow {
+                                    ...orderRow} key={i}/>
                             })
                             }
-
+                             */}  
                         </tbody>
 
                         <tfoot>

@@ -10,8 +10,9 @@ function ChartRow(props){
                     <td>{props.Id}</td>
                     <td><a href={`http://localhost:3001/juguetes/${props.Id}`} target="_blank" rel='noreferrer'>{props.Name}</a></td>
                     <td>
-                        <img src={`${props.Img}`}  alt='juguete' className='chart-img'/>
+                        <img src={`${props.Img}`}  alt='juguete' style={{width: 50+ 'px'}}/>
                         </td>
+                    <td>{props.Rating}</td>
                     <td>{props.Price} $</td>
                     <td>{props.Age}</td>
                     <td>{props.Categories}</td>

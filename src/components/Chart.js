@@ -30,6 +30,7 @@ function Chart (){
                                 <th>id</th>
                                 <th>Nombre</th>
                                 <th>Imagen</th>
+                                <th>Rating</th>
                                 <th>Precio</th>
                                 <th>Rango edad</th>
                                 <th>Categoias</th>
@@ -40,17 +41,21 @@ function Chart (){
                         
                         <tbody>
                              {
+                                    
+
                             data.map( ( e , i) => {
                                 let row = {
                                     Id: e.id, 
                                     Name: e.name, 
                                     Img: e.img,
                                     Price: e.price,
+                                    Rating: e.ratings.length>0?e.ratings.reduce((pv,cv)=> pv + cv)/e.ratings.length: "No reviews",
                                     Age: e.age, 
                                     Categories: e.category,
                                     Description: e.description,
                                     Edit: `http://localhost:3001/edit/${e.id}`
                                 }
+                                console.log(data)
                                 return <ChartRow {
                                     ...row} key={i}/>
                             })
@@ -63,6 +68,7 @@ function Chart (){
                                 <th>id</th>
                                 <th>Nombre</th>
                                 <th>Imagen</th>
+                                <th>Rating</th>
                                 <th>Precio</th>
                                 <th>Rango Edad</th>
                                 <th>Categorias</th>

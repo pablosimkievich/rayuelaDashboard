@@ -6,6 +6,7 @@ import LastToyInDb from './LastToyInDb';
 import ContentRowDataCards from './ContentRowDataCards';
 import NotFound from './NotFound';
 import SideBar from './SideBar';
+import Orders from './Orders'
 import Products from './Products'
 import {BrowserRouter,Routes, Route} from 'react-router-dom';
 import SearchToys from './SearchToys';
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="/"  element={<ContentWrapper />}></Route>
             <Route path="/Products" element={<Products />}></Route>
             <Route path="/CategoriesInDb" element={<CategoriesInDb />}></Route>
+            <Route path="/Orders" element={<Orders />}></Route>
             <Route path="/LastMovieInDb" element={<LastToyInDb />}></Route>
             <Route path="/ContentRowDataCards" element={<ContentRowDataCards />}></Route>
             <Route path="/SearchResults" element={<SearchToys/>}></Route>

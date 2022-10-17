@@ -24,6 +24,9 @@ function Chart (){
         <div className="card shadow mb-4">
             <div className="card-body">
                 <div className="table-responsive">
+                <div className="col-12">
+							<h2>Juguetes</h2>
+						</div>
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
@@ -33,9 +36,10 @@ function Chart (){
                                 <th>Rating</th>
                                 <th>Precio</th>
                                 <th>Rango edad</th>
-                                <th>Categoias</th>
+                                <th>Categorias</th>
                                 <th>Descripcion</th>
                                 <th>Editar</th>
+                                <th>Borrar</th>
                             </tr>
                         </thead>
                         
@@ -54,7 +58,8 @@ function Chart (){
                                     Age: e.age, 
                                     Categories: e.category,
                                     Description: e.description,
-                                    Edit: `http://localhost:3001/edit/${e.id}`
+                                    Edit: `http://localhost:3001/edit/${e.id}`,
+                                    Delete: `http://localhost:3001/${e.id}?_method=DELETE`
                                 }
                                 console.log(data)
                                 return <ChartRow {
@@ -75,6 +80,7 @@ function Chart (){
                                 <th>Categorias</th>
                                 <th>Descripcion</th>
                                 <th>Editar</th>
+                                <th>Borrar</th>
                             </tr>
                         </tfoot>
                     </table>

@@ -31,7 +31,7 @@ function SideBar(){
                 {/*<!-- Heading -->*/}
                 <div className="sidebar-heading">Actions</div>
 
-                {/*<!-- Nav Item - Pages -->*/}
+                {/*<!-- Nav Item - Juguetes -->*/}
                 <li className="nav-item">
                 <Link className="nav-link" to={"/Products"}>
                         <i className="fas fa-fw fa-folder"></i>
@@ -39,26 +39,18 @@ function SideBar(){
                     </Link>
                 </li>
 
-                 {/*<!-- Nav Item - Categories -->*/}
-                 <li className="nav-item nav-link">
-                 <Link className="nav-link" to={"/Orders"}>
-                        <i className="fas fa-fw fa-folder"></i>
-                        <span>Orders</span>
-                    </Link>
-                </li>
-
-                {/*<!-- Nav Item - Charts -->*/}
+                {/*<!-- Nav Item - Ordenes de Compra -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to={"/LastToyInDb"}>
+                    <Link className="nav-link" to={"/Orders"}>
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Ordenes de Compra</span></Link>
                 </li>
 
-                {/*<!-- Nav Item - Tables -->*/}
+                {/*<!-- Nav Item - Usuarios -->*/}
                 <li className="nav-item nav-link">
                 <Link className="nav-link" to={"/ContentRowDataCards"}>
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
+                        <span>Usuarios</span></Link>
                 </li>
 
                  {/*<!-- Nav Item - Search -->*/}

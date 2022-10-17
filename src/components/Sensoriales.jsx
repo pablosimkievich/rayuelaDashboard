@@ -22,6 +22,9 @@ function Sensoriales(){
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
             <div className="card-body">
+            <div className="col-12">
+							<h2>Juguetes Sensoriales</h2>
+						</div>
                 <div className="table-responsive">
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>

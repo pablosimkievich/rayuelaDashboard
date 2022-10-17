@@ -23,6 +23,9 @@ function Movimientos(){
         <div className="card shadow mb-4">
             <div className="card-body">
                 <div className="table-responsive">
+                <div className="col-12">
+							<h2>Juguetes categoría Movimiento</h2>
+						</div>
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>

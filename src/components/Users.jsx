@@ -1,22 +1,22 @@
 import React from 'react';
-import ChartOrderRow from './ChartOrderRow';
+import ChartUserRow from './ChartUserRow';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
 
 
 
-function Orders (){
-    const [ordersData, setOrderData] = useState([]);
-    const ordersApi =  async () => {
-        const json = await axios("http://localhost:3001/api/orders");//pego a mi api
+function Users (){
+    const [usersData, setUsersData] = useState([]);
+    const usersInfo =  async () => {
+        const json = await axios("http://localhost:3001/api/users");//pego a mi api
             console.log(json.data)
-            setOrderData(json.data.orders);};
+            seUusersData(json.data.users);};
 
         useEffect(() => {
-            ordersApi();
+            usersInfo();
        
-        }, [setOrderData]);
+        }, [setUsersData]);
 
         
 
@@ -25,26 +25,21 @@ function Orders (){
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
             <div className="card-body">
-                <div className="col-12">
-							<h2>Ordenes de Compra</h2>
-						</div>
                 <div className="table-responsive">
                     <table className="table table-bordered" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
                                 <th>id</th>
-                                <th>Cliente</th>
-                                <th>Fecha</th>
-                                <th>Estado</th>
-                                <th>Total</th>
-                                <th>Metodo de Pago</th>
-                                <th>Detalle</th>
+                                <th>Nombre</th>
+                                <th>Telefono</th>
+                                <th>Mail</th>
+                                <th>Direccion</th>
                             </tr>
                         </thead>
                       
                         <tbody>
                         {
-                            ordersData.map( ( element , i) => {
+                            UsersData.map( ( element , i) => {
                                 let orderRow = {
                                     Id: element.id,
                                     URLCliente: `http://localhost:3001/user-detail/${element.users.id}`,
@@ -67,12 +62,10 @@ function Orders (){
                         <tfoot>
                             <tr>
                                 <th>id</th>
-                                <th>Cliente</th>
-                                <th>Fecha</th>
-                                <th>Estado</th>
-                                <th>Total</th>
-                                <th>Metodo de Pago</th>
-                                <th>Detalle</th>
+                                <th>Nombre</th>
+                                <th>Telefono</th>
+                                <th>Mail</th>
+                                <th>Direccion</th>
                             </tr>
                         </tfoot>
                     </table>

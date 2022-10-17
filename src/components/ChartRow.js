@@ -25,15 +25,22 @@ function ChartRow(props){
                         }
                       
                     </td>
+
                     <td>{props.Price} $</td>
                     <td>{props.Age}</td>
                     <td>{props.Categories}</td>
                     <td>{props.Description}</td>
                     <td>
+                  
                         <a href={`${props.Edit}`}  target="_blank" rel='noreferrer'>
-                            <button>EDIT</button>
+                            <button style={{border: 'none'}}>EDIT</button>
                             </a>
                         </td>
+                    <td>   
+                      <form action={`${props.Delete}`} method="POST">
+                            <button type="submit" class="form-button" style={{border: 'none'}}>DELETE</button>
+                        </form>
+                     </td>
                 </tr>
             )
     }

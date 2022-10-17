@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function ChartOrderRow(info){
+function ChartUserRow(info){
   
     return (
                 <tr>
@@ -24,4 +24,4 @@ function ChartOrderRow(info){
     
         
 
-export default ChartOrderRow;
+export default ChartUserRow;

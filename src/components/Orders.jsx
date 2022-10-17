@@ -1,5 +1,5 @@
 import React from 'react';
-import ChartOrderRow from './ChartRow';
+import ChartOrderRow from './ChartOrderRow';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
@@ -39,7 +39,7 @@ function Orders (){
                         </thead>
                       
                         <tbody>
-                    {/*     {
+                        {
                             ordersData.map( ( element , i) => {
                                 let orderRow = {
                                     Id: element.id,
@@ -54,7 +54,7 @@ function Orders (){
                                     ...orderRow} key={i}/>
                             })
                             }
-                             */}  
+                        
                         </tbody>
 
                         <tfoot>

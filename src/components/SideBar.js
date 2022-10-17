@@ -41,9 +41,9 @@ function SideBar(){
 
                  {/*<!-- Nav Item - Categories -->*/}
                  <li className="nav-item nav-link">
-                 <Link className="nav-link" to={"/CategoriesInDb"}>
+                 <Link className="nav-link" to={"/Orders"}>
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Categorias</span>
+                        <span>Orders</span>
                     </Link>
                 </li>
 

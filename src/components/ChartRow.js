@@ -2,21 +2,38 @@ import React from 'react';
 
 
 
-function ChartRow(props){
 
+function ChartRow(props){
+  
     return (
                 <tr>
-                    <td>{props.name}</td>
-                    <td>{props.price}</td>
-                    <td>{props.stock}</td>
+                    <td>{props.Id}</td>
                     <td>
-                        <ul>
-                            {props.listado.map( (listado,i) => 
-                                <li key={`listado ${i}`}>{listado}</li>
-                            )}
-                        </ul>
+                        <img src={`${props.Img}`}  alt='juguete' style={{width: 50+ 'px'}}/>
+                        </td>
+                    <td>
+                        <a href={`http://localhost:3001/juguetes/${props.Id}`} target="_blank" rel='noreferrer'>{props.Name}</a>
+                        </td>
+                    <td>
+                        {`${props.Rating}`!=="No reviews"?
+                        <span>
+                        <div className="stars-outer" >      
+                            <div className="stars-inner" id="starsInner" style={{width: `${props.Rating}` + '%'}}></div>
+                        </div>  
+                        <p>de {props.TotalReviews} reviews</p>
+                        </span>: <p>No reviews</p>
+                        }
+                      
                     </td>
-                    <td>{props.Awards}</td>
+                    <td>{props.Price} $</td>
+                    <td>{props.Age}</td>
+                    <td>{props.Categories}</td>
+                    <td>{props.Description}</td>
+                    <td>
+                        <a href={`${props.Edit}`}  target="_blank" rel='noreferrer'>
+                            <button>EDIT</button>
+                            </a>
+                        </td>
                 </tr>
             )
     }

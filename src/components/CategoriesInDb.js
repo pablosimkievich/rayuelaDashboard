@@ -1,7 +1,7 @@
 import React from "react";
 import {useState, useEffect} from 'react';
 import axios from 'axios';
-
+import { Link } from "react-router-dom";
 
 function CategoriesInDb() {
   const [categorias, setCategorias] = useState();
@@ -36,24 +36,32 @@ function CategoriesInDb() {
         <div className="card-body">
           <div className="row">
             <div className="col-lg-6 mb-4">
+              <Link to='/Sensoriales'>
               <div className="card bg-dark text-white shadow">
                 <div className="card-body">Sensoriales: {categorias.sensoriales} u.</div>
               </div>
+              </Link>
             </div>
             <div className="col-lg-6 mb-4">
+            <Link to='/Musicales'>
               <div className="card bg-dark text-white shadow">
                 <div className="card-body">Musicales: {categorias.musicales} u.</div>
               </div>
+              </Link>
             </div>
             <div className="col-lg-6 mb-4">
+            <Link to='/Ingenio'>
               <div className="card bg-dark text-white shadow">
                 <div className="card-body">Ingenio: {categorias.ingenio} u.</div>
               </div>
+              </Link>
             </div>
             <div className="col-lg-6 mb-4">
+            <Link to='/Movimientos'>
               <div className="card bg-dark text-white shadow">
                 <div className="card-body">Movimiento: {categorias.movimientos} u.</div>
               </div>
+              </Link>
             </div>
             
           </div>

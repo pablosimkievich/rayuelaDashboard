@@ -1,5 +1,5 @@
 import React from 'react';
-import ChartRow from './ChartRow';
+import ChartRow from './productTables/ChartRow';
 import axios from 'axios';
 import {useEffect, useState} from 'react';
 

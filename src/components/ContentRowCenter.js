@@ -1,7 +1,7 @@
 import React from 'react';
 import LastToyInDb from './LastToyInDb';
 import CategoriesInDb from './CategoriesInDb';
-import LastUserInDb from './LastUserInDb';
+// import LastUserInDb from './LastUserInDb';
 
 function ContentRowCenter(){
     return (

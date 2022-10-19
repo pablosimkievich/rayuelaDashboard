@@ -79,7 +79,7 @@ const handelInputChange = (e)=>{
 														style={{ width: '100%', height: '150px', objectFit: 'cover' }} 
 													/>
 												</div>
-												<p>{toy.price}</p>
+												<p>$ {toy.price}</p>
 											</div>
 										</div>
 									</div>

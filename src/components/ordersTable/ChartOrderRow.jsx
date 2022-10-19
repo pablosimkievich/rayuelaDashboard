@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function ChartUserRow(info){
+function ChartOrderRow(info){
   
     return (
                 <tr>
@@ -15,7 +15,7 @@ function ChartUserRow(info){
                     <td>{info.MPago}</td>
                     <td>
                         <a href={`${info.Detalle}`}  target="_blank" rel='noreferrer'>
-                            <button>View</button>
+                            <button >View </button>
                             </a>
                       </td>
                 </tr>
@@ -24,4 +24,4 @@ function ChartUserRow(info){
     
         
 
-export default ChartUserRow;
+export default ChartOrderRow;

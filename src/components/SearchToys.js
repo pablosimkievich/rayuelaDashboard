@@ -91,7 +91,8 @@ const handelInputChange = (e)=>{
 							})
 						}
 					</div>
-					{ results && <div className="alert alert-warning text-center">No se encontraron juguetes</div>}
+					{
+					  !results.length ? <div className="alert alert-warning text-center">No se encontraron juguetes</div> : <div></div>}
 				</>
 					
 

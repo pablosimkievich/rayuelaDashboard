@@ -18,7 +18,7 @@ function ChartRow(props){
                         {`${props.Rating}`!=="No reviews"?
                         <span>
                         <div className="stars-outer" >      
-                            <div className="stars-inner" id="starsInner" style={{width: `${props.Rating}` + '%'}}></div>
+                            <div className="stars-inner" id="starsInner" style={{width: `${props.Rating}%` }}></div>
                         </div>  
                         <p>de {props.TotalReviews} reviews</p>
                         </span>: <p>No reviews</p>

@@ -1,20 +1,21 @@
 import React from 'react';
 import ChartRow from './ChartRow';
+import ProductTableHead from './ProductTableHead';
 import axios from 'axios';
 import {useEffect, useState} from 'react';
 
-function Ingenio(){
-    const [dataIngenio, setdataIngenio] = useState([]);
+function Movimientos(){
+    const [dataMovimientos, setDataMovimientos] = useState([]);
     const products =  async () => {
         const json = await axios("http://localhost:3001/api/products");//pego a mi api
             {/* console.log(json) */}
-        setdataIngenio(json.data.juguetesXCategoria.ingenio);
+        setDataMovimientos(json.data.juguetesXCategoria.movimientos);
         }
 
         useEffect(() => {
             products();
-            console.log(dataIngenio)
-        }, [setdataIngenio]);
+            console.log(dataMovimientos)
+        }, [setDataMovimientos]);
 			
 
     return (
@@ -24,28 +25,18 @@ function Ingenio(){
             <div className="card-body">
                 <div className="table-responsive">
                 <div className="col-12">
-							<h2>Juguetes de Ingenio</h2>
+							<h2>Juguetes categoría Movimiento</h2>
 						</div>
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
-                            <tr>
-                                <th>id</th>
-                                <th>Nombre</th>
-                                <th>Imagen</th>
-                                <th>Rating</th>
-                                <th>Precio</th>
-                                <th>Rango edad</th>
-                                <th>Categoias</th>
-                                <th>Descripcion</th>
-                                <th>Editar</th>
-                            </tr>
+                           <ProductTableHead/>
                         </thead>
                         
                         <tbody>
                              {
                                     
 
-                            dataIngenio.map( ( e , i) => {
+                            dataMovimientos.map( ( e , i) => {
                                 let row = {
                                     Id: e.id, 
                                     Name: e.name, 
@@ -56,7 +47,8 @@ function Ingenio(){
                                     Age: e.age, 
                                     Categories: e.category,
                                     Description: e.description,
-                                    Edit: `http://localhost:3001/edit/${e.id}`
+                                    Edit: `http://localhost:3001/edit/${e.id}`,
+                                    Delete: `http://localhost:3001/${e.id}?_method=DELETE`
                                 }
                                
                                 return <ChartRow {
@@ -68,15 +60,7 @@ function Ingenio(){
 
                         <tfoot>
                             <tr>
-                                <th>id</th>
-                                <th>Nombre</th>
-                                <th>Imagen</th>
-                                <th>Rating</th>
-                                <th>Precio</th>
-                                <th>Rango Edad</th>
-                                <th>Categorias</th>
-                                <th>Descripcion</th>
-                                <th>Editar</th>
+                                <ProductTableHead />
                             </tr>
                         </tfoot>
                     </table>
@@ -89,4 +73,5 @@ function Ingenio(){
    
 }
 
-export default Ingenio;
+export default Movimientos;
+					

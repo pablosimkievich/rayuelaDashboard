@@ -46,9 +46,17 @@ function SideBar(){
                         <span>Ordenes de Compra</span></Link>
                 </li>
 
-                {/*<!-- Nav Item - Usuarios -->*/}
+                {/*<!-- Nav Item - Top10 -->*/}
                 <li className="nav-item nav-link">
                 <Link className="nav-link" to={"/ContentRowDataCards"}>
+                        <i className="fas fa-fw fa-table"></i>
+                        <span>Top10/reviews</span></Link>
+                </li>
+
+
+                {/*<!-- Nav Item - Usuarios -->*/}
+                <li className="nav-item nav-link">
+                <Link className="nav-link" to={"/Users"}>
                         <i className="fas fa-fw fa-table"></i>
                         <span>Usuarios</span></Link>
                 </li>

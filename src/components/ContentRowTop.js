@@ -1,7 +1,7 @@
 import React from 'react';
 import ContentRowCenter from './ContentRowCenter';
 import ContentRowDataCards from './ContentRowDataCards';
-import Chart from './Chart';
+import Chart from './productTables/Chart';
 
 function ContentRowTop(){
     return(

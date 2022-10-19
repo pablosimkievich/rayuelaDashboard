@@ -1,5 +1,6 @@
 import React from 'react';
 import ChartRow from './ChartRow';
+import ProductTableHead from './ProductTableHead';
 import axios from 'axios';
 import {useEffect, useState} from 'react';
 
@@ -28,17 +29,7 @@ function Sensoriales(){
                 <div className="table-responsive">
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
-                            <tr>
-                                <th>id</th>
-                                <th>Nombre</th>
-                                <th>Imagen</th>
-                                <th>Rating</th>
-                                <th>Precio</th>
-                                <th>Rango edad</th>
-                                <th>Categoias</th>
-                                <th>Descripcion</th>
-                                <th>Editar</th>
-                            </tr>
+                          <ProductTableHead/>
                         </thead>
                         
                         <tbody>
@@ -56,7 +47,8 @@ function Sensoriales(){
                                     Age: e.age, 
                                     Categories: e.category,
                                     Description: e.description,
-                                    Edit: `http://localhost:3001/edit/${e.id}`
+                                    Edit: `http://localhost:3001/edit/${e.id}`,
+                                    Delete: `http://localhost:3001/${e.id}?_method=DELETE`
                                 }
                                
                                 return <ChartRow {
@@ -68,15 +60,7 @@ function Sensoriales(){
 
                         <tfoot>
                             <tr>
-                                <th>id</th>
-                                <th>Nombre</th>
-                                <th>Imagen</th>
-                                <th>Rating</th>
-                                <th>Precio</th>
-                                <th>Rango Edad</th>
-                                <th>Categorias</th>
-                                <th>Descripcion</th>
-                                <th>Editar</th>
+                            <ProductTableHead/>
                             </tr>
                         </tfoot>
                     </table>

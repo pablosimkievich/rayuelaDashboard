@@ -1,5 +1,6 @@
 import React from 'react';
 import ChartOrderRow from './ChartOrderRow';
+import OrderTableHead from './OrderTableHead';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
@@ -31,15 +32,7 @@ function Orders (){
                 <div className="table-responsive">
                     <table className="table table-bordered" width="100%" cellSpacing="0">
                         <thead>
-                            <tr>
-                                <th>id</th>
-                                <th>Cliente</th>
-                                <th>Fecha</th>
-                                <th>Estado</th>
-                                <th>Total</th>
-                                <th>Metodo de Pago</th>
-                                <th>Detalle</th>
-                            </tr>
+                         <OrderTableHead/>
                         </thead>
                       
                         <tbody>
@@ -50,8 +43,8 @@ function Orders (){
                                     URLCliente: `http://localhost:3001/user-detail/${element.users.id}`,
                                     Cliente: element.users.user_first_name + ' ' +element.users.user_last_name, 
                                     Fecha: element.order_date,
-                                    Estado: element.order_status,
-                                    Total: element.order_total_amt, 
+                                    Total: element.order_total_amt,
+                                    Estado: element.order_status, 
                                     MPago: element.payment_method,
                                     Detalle:  `http://localhost:3001/order-detail/${element.id}`
                                     
@@ -65,15 +58,7 @@ function Orders (){
                         </tbody>
 
                         <tfoot>
-                            <tr>
-                                <th>id</th>
-                                <th>Cliente</th>
-                                <th>Fecha</th>
-                                <th>Estado</th>
-                                <th>Total</th>
-                                <th>Metodo de Pago</th>
-                                <th>Detalle</th>
-                            </tr>
+                            <OrderTableHead/>
                         </tfoot>
                     </table>
                 </div>

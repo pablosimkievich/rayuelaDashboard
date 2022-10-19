@@ -1,45 +1,36 @@
 import React from 'react';
 import ChartRow from './ChartRow';
-import {useState, useEffect} from 'react';
+import ProductTableHead from './ProductTableHead';
 import axios from 'axios';
+import {useEffect, useState} from 'react';
 
-
-
-
-function Chart (){
-    const [data, setData] = useState([]);
+function Musicales(){
+    const [dataMusicales, setdataMusicales] = useState([]);
     const products =  async () => {
         const json = await axios("http://localhost:3001/api/products");//pego a mi api
             {/* console.log(json) */}
-        setData(json.data.products);};
+        setdataMusicales(json.data.juguetesXCategoria.musicales);
+        }
 
         useEffect(() => {
             products();
-            console.log(data)
-        }, [setData]);
+            console.log(dataMusicales)
+        }, [setdataMusicales]);
+			
 
     return (
      
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
             <div className="card-body">
-                <div className="table-responsive">
                 <div className="col-12">
-							<h2>Juguetes</h2>
+							<h2>Juguetes Musicales</h2>
 						</div>
+                <div className="table-responsive">
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>id</th>
-                                <th>Nombre</th>
-                                <th>Imagen</th>
-                                <th>Rating</th>
-                                <th>Precio</th>
-                                <th>Rango edad</th>
-                                <th>Categorias</th>
-                                <th>Descripcion</th>
-                                <th>Editar</th>
-                                <th>Borrar</th>
+                               <ProductTableHead/>
                             </tr>
                         </thead>
                         
@@ -47,7 +38,7 @@ function Chart (){
                              {
                                     
 
-                            data.map( ( e , i) => {
+                            dataMusicales.map( ( e , i) => {
                                 let row = {
                                     Id: e.id, 
                                     Name: e.name, 
@@ -61,7 +52,7 @@ function Chart (){
                                     Edit: `http://localhost:3001/edit/${e.id}`,
                                     Delete: `http://localhost:3001/${e.id}?_method=DELETE`
                                 }
-                                console.log(data)
+                               
                                 return <ChartRow {
                                     ...row} key={i}/>
                             })
@@ -71,16 +62,7 @@ function Chart (){
 
                         <tfoot>
                             <tr>
-                                <th>id</th>
-                                <th>Nombre</th>
-                                <th>Imagen</th>
-                                <th>Rating</th>
-                                <th>Precio</th>
-                                <th>Rango Edad</th>
-                                <th>Categorias</th>
-                                <th>Descripcion</th>
-                                <th>Editar</th>
-                                <th>Borrar</th>
+                            <ProductTableHead/>
                             </tr>
                         </tfoot>
                     </table>
@@ -89,6 +71,8 @@ function Chart (){
         </div>
 
     )
+
+   
 }
 
-export default Chart;
+export default Musicales;

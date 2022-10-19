@@ -8,7 +8,7 @@ function ContentRowCenter(){
         <div className="row">
             <CategoriesInDb />
          
-            <CategoriesInDb />
+           
             {/*<!-- Ultimo juguete en DB -->*/}
             <LastToyInDb />
             {/*<!-- End content row last toy in Data Base -->*/}

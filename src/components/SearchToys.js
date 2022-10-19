@@ -83,7 +83,7 @@ const handelInputChange = (e)=>{
 														style={{ width: '100%', height: '150px', objectFit: 'cover' }} 
 													/>
 												</div>
-												<p>{toy.price}</p>
+												<p className="text-center">Id: {toy.id}</p>
 											</div>
 										</div>
 									</div>
@@ -92,7 +92,7 @@ const handelInputChange = (e)=>{
 						}
 					</div>
 					{
-					  !results.length ? <div className="alert alert-warning text-center">No se encontraron juguetes</div> : <div></div>}
+					results && !results.length ? <div className="alert alert-warning text-center">No se encontraron juguetes</div> : <div></div>}
 				</>
 					
 

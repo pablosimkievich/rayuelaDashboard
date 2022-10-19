@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 
 
@@ -17,10 +18,12 @@ function ChartRow(props){
                     <td>
                         {`${props.Rating}`!=="No reviews"?
                         <span>
-                        <div className="stars-outer" >      
-                            <div className="stars-inner" id="starsInner" style={{width: `${props.Rating}%` }}></div>
-                        </div>  
-                        <p>de {props.TotalReviews} reviews</p>
+                            <div className="stars-outer" >      
+                                     <div className="stars-inner" id="starsInner" style={{width: `${props.Rating}%` }}></div>
+                                </div>  
+                            <p>
+                                   de {props.TotalReviews} <Link to={`/Reviews/${props.Id}`}>reviews</Link>
+                                </p>
                         </span>: <p>No reviews</p>
                         }
                       
@@ -38,7 +41,7 @@ function ChartRow(props){
                         </td>
                     <td>   
                       <form action={`${props.Delete}`} method="POST">
-                            <button type="submit" class="form-button" style={{border: 'none'}}>DELETE</button>
+                            <button type="submit" className="form-button" style={{border: 'none'}}>DELETE</button>
                         </form>
                      </td>
                 </tr>

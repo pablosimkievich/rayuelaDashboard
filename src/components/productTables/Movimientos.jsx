@@ -8,7 +8,7 @@ function Movimientos(){
     const [dataMovimientos, setDataMovimientos] = useState([]);
     const products =  async () => {
         const json = await axios("http://localhost:3001/api/products");//pego a mi api
-            {/* console.log(json) */}
+            
         setDataMovimientos(json.data.juguetesXCategoria.movimientos);
         }
 
@@ -59,9 +59,9 @@ function Movimientos(){
                         </tbody>
 
                         <tfoot>
-                            <tr>
+                           
                                 <ProductTableHead />
-                            </tr>
+                            
                         </tfoot>
                     </table>
                 </div>

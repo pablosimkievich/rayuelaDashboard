@@ -29,9 +29,9 @@ function Musicales(){
                 <div className="table-responsive">
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
-                            <tr>
+                            
                                <ProductTableHead/>
-                            </tr>
+                            
                         </thead>
                         
                         <tbody>
@@ -61,9 +61,9 @@ function Musicales(){
                         </tbody>
 
                         <tfoot>
-                            <tr>
+                            
                             <ProductTableHead/>
-                            </tr>
+                            
                         </tfoot>
                     </table>
                 </div>

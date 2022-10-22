@@ -59,9 +59,7 @@ function Movimientos(){
                         </tbody>
 
                         <tfoot>
-                            <tr>
                                 <ProductTableHead />
-                            </tr>
                         </tfoot>
                     </table>
                 </div>

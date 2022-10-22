@@ -49,7 +49,7 @@ function Orders (){
                                     Detalle:  `http://localhost:3001/order-detail/${element.id}`
                                     
                                 }
-                                console.log(orderRow)
+                              
                                 return <ChartOrderRow {
                                     ...orderRow} key={i}/>
                             })

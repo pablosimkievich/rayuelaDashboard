@@ -29,9 +29,9 @@ function Musicales(){
                 <div className="table-responsive">
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
-                            <tr>
+                           
                                <ProductTableHead/>
-                            </tr>
+                           
                         </thead>
                         
                         <tbody>
@@ -50,7 +50,7 @@ function Musicales(){
                                     Categories: e.category,
                                     Description: e.description,
                                     Edit: `http://localhost:3001/edit/${e.id}`,
-                                    Delete: `http://localhost:3001/${e.id}?_method=DELETE`
+                                 
                                 }
                                
                                 return <ChartRow {
@@ -61,9 +61,9 @@ function Musicales(){
                         </tbody>
 
                         <tfoot>
-                            <tr>
+                           
                             <ProductTableHead/>
-                            </tr>
+                          
                         </tfoot>
                     </table>
                 </div>

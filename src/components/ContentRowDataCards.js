@@ -34,7 +34,7 @@ function ContentRowDataCards(){
 
      let salesInDB = {
         title: 'Total de Ventas',
-        color: 'success', 
+        color: 'info', 
         cuantity: `$ ${orders.totalSales}`,
         icon: 'fa-clipboard-list'
     }
@@ -52,7 +52,7 @@ function ContentRowDataCards(){
     
     let usersInDB = {
         title:'Usuarios en Data Base' ,
-        color:'success',
+        color:'warning',
         cuantity:`${users.length}`,
         icon:'fa-user-check'
     }

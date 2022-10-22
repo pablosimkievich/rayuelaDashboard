@@ -19,6 +19,7 @@ import Edad3 from './Edad3';
 import Edad4 from './Edad4';
 import {BrowserRouter,Routes, Route} from 'react-router-dom';
 import SearchToys from './SearchToys';
+import SalesCard from './SalesCard';
 import '.././assets/css/app.css';
 import '.././assets/css/products-styles.css';
 
@@ -50,8 +51,9 @@ function App() {
             <Route path="/Users" element={<Users />}></Route>
             <Route path="/LastMovieInDb" element={<LastToyInDb />}></Route>
             <Route path="/ContentRowDataCards" element={<ContentRowDataCards />}></Route>
+            <Route path="/salesByProduct" element={<SalesCard />}></Route>
             <Route path="/SearchResults" element={<SearchToys/>}></Route>
-            <Route path='*' element={NotFound} />
+            <Route path='/*' element={<NotFound/>} />
             
           </Routes>
      </BrowserRouter>

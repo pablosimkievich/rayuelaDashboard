@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 
 
@@ -39,11 +40,7 @@ function ChartRow(props){
                             <button style={{border: 'none'}}>EDIT</button>
                             </a>
                         </td>
-                    <td>   
-                      <form action={`${props.Delete}`} method="POST">
-                            <button type="submit" className="form-button" style={{border: 'none'}}>DELETE</button>
-                        </form>
-                     </td>
+                    
                 </tr>
             )
     }

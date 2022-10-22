@@ -48,7 +48,7 @@ function Ingenio(){
                                     Categories: e.category,
                                     Description: e.description,
                                     Edit: `http://localhost:3001/edit/${e.id}`,
-                                    Delete: `http://localhost:3001/${e.id}?_method=DELETE`
+                                  
                                 }
                                
                                 return <ChartRow {

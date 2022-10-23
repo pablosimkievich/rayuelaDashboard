@@ -40,7 +40,7 @@ function Orders (){
                             ordersData.map( ( element , i) => {
                                 let orderRow = {
                                     Id: element.id,
-                                    URLCliente: `http://localhost:3001/user-detail/${element.users.id}`,
+                                    URLCliente: `http://localhost:3001/user/${element.users.id}`,
                                     Cliente: element.users.user_first_name + ' ' +element.users.user_last_name, 
                                     Fecha: element.order_date,
                                     Total: element.order_total_amt,

@@ -1,75 +1,76 @@
-import React from 'react';
-import ChartRow from './ChartRow';
-import ProductTableHead from './ProductTableHead';
+import React from "react";
+import {useState, useEffect} from 'react';
 import axios from 'axios';
-import {useEffect, useState} from 'react';
+import { Link } from "react-router-dom";
 
-function Movimientos(){
-    const [dataMovimientos, setDataMovimientos] = useState([]);
-    const products =  async () => {
+function CategoriesInDb() {
+  const [categorias, setCategorias] = useState();
+
+    const getCategorias =  async () => {
         const json = await axios("http://localhost:3001/api/products");//pego a mi api
-            {/* console.log(json) */}
-        setDataMovimientos(json.data.juguetesXCategoria.movimientos);
+        
+        setCategorias(json.data.countByCategory);
+      }
+    
+
+  
+      useEffect(() => {
+        if(!categorias){
+          getCategorias()
         }
+        console.log(categorias) 
+        console.log('hola')
+    }, [categorias]);
 
-        useEffect(() => {
-            products();
-            console.log(dataMovimientos)
-        }, [setDataMovimientos]);
-			
-
-    return (
-     
-        /* <!-- DataTales Example --> */
-        <div className="card shadow mb-4">
-            <div className="card-body">
-                <div className="table-responsive">
-                <div className="col-12">
-							<h2>Juguetes categoría Movimiento</h2>
-						</div>
-                    <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
-                        <thead>
-                           <ProductTableHead/>
-                        </thead>
-                        
-                        <tbody>
-                             {
-                                    
-
-                            dataMovimientos.map( ( e , i) => {
-                                let row = {
-                                    Id: e.id, 
-                                    Name: e.name, 
-                                    Img: e.img,
-                                    Price: e.price,
-                                    TotalReviews: e.ratings.length,
-                                    Rating: e.ratings.length>0?e.ratings.reduce((pv,cv)=> pv + cv)/e.ratings.length: "No reviews",
-                                    Age: e.age, 
-                                    Categories: e.category,
-                                    Description: e.description,
-                                    Edit: `http://localhost:3001/edit/${e.id}`,
-                                    Delete: `http://localhost:3001/${e.id}?_method=DELETE`
-                                }
-                               
-                                return <ChartRow {
-                                    ...row} key={i}/>
-                            })
-                            }
-                            
-                        </tbody>
-
-                        <tfoot>
-                                <ProductTableHead />
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
+  return (
+   
+     <div className="col-lg-6 mb-4">
+      <div className="card shadow mb-4">
+        <div className="card-header py-3">
+          <h5 className="m-0 font-weight-bold text-gray-800">
+          Categorias
+          </h5>
         </div>
 
-    )
-
-   
+      {  categorias && categorias? 
+        <div className="card-body">
+          <div className="row">
+            <div className="col-lg-6 mb-4">
+              <Link to='/Sensoriales'>
+              <div className="card bg-dark text-white shadow">
+                <div className="card-body">Sensoriales: {categorias.sensoriales} u.</div>
+              </div>
+              </Link>
+            </div>
+            <div className="col-lg-6 mb-4">
+            <Link to='/Musicales'>
+              <div className="card bg-dark text-white shadow">
+                <div className="card-body">Musicales: {categorias.musicales} u.</div>
+              </div>
+              </Link>
+            </div>
+            <div className="col-lg-6 mb-4">
+            <Link to='/Ingenio'>
+              <div className="card bg-dark text-white shadow">
+                <div className="card-body">Ingenio: {categorias.ingenio} u.</div>
+              </div>
+              </Link>
+            </div>
+            <div className="col-lg-6 mb-4">
+            <Link to='/Movimientos'>
+              <div className="card bg-dark text-white shadow">
+                <div className="card-body">Movimiento: {categorias.movimientos} u.</div>
+              </div>
+              </Link>
+            </div>
+            
+          </div>
+        </div>
+       :null }
+      </div>
+    </div>
+  );
 }
 
-export default Movimientos;
+export default CategoriesInDb;
 					

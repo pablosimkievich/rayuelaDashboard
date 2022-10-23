@@ -1,6 +1,5 @@
 import React from 'react';
 import ChartRow from './ChartRow';
-import ProductTableHead from './ProductTableHead';
 import axios from 'axios';
 import {useEffect, useState} from 'react';
 
@@ -23,15 +22,20 @@ function Musicales(){
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
             <div className="card-body">
-                <div className="col-12">
-							<h2>Juguetes Musicales</h2>
-						</div>
                 <div className="table-responsive">
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
-                           
-                               <ProductTableHead/>
-                           
+                            <tr>
+                                <th>id</th>
+                                <th>Nombre</th>
+                                <th>Imagen</th>
+                                <th>Rating</th>
+                                <th>Precio</th>
+                                <th>Rango edad</th>
+                                <th>Categoias</th>
+                                <th>Descripcion</th>
+                                <th>Editar</th>
+                            </tr>
                         </thead>
                         
                         <tbody>
@@ -49,8 +53,7 @@ function Musicales(){
                                     Age: e.age, 
                                     Categories: e.category,
                                     Description: e.description,
-                                    Edit: `http://localhost:3001/edit/${e.id}`,
-                                 
+                                    Edit: `http://localhost:3001/edit/${e.id}`
                                 }
                                
                                 return <ChartRow {
@@ -61,9 +64,17 @@ function Musicales(){
                         </tbody>
 
                         <tfoot>
-                           
-                            <ProductTableHead/>
-                          
+                            <tr>
+                                <th>id</th>
+                                <th>Nombre</th>
+                                <th>Imagen</th>
+                                <th>Rating</th>
+                                <th>Precio</th>
+                                <th>Rango Edad</th>
+                                <th>Categorias</th>
+                                <th>Descripcion</th>
+                                <th>Editar</th>
+                            </tr>
                         </tfoot>
                     </table>
                 </div>

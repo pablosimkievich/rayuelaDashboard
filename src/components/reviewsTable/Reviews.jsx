@@ -58,6 +58,7 @@ function Reviews( ){
                                 let row = {
                                     Id: e.id,
                                     User: user.name,
+                                    UserId: user.id,
                                     Rating: e.rating,
                                     Title: e.review_title,
                                     Review: e.review                                  

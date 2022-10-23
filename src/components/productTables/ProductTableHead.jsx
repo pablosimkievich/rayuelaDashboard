@@ -16,7 +16,7 @@ function ProductTableHead(){
                                 <th>Categorias</th>
                                 <th>Descripcion</th>
                                 <th>Editar</th>
-                                <th>Borrar</th>
+                              
                             </tr>
                         )
     }

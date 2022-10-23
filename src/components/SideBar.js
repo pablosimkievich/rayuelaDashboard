@@ -58,7 +58,7 @@ function SideBar(){
                 <li className="nav-item nav-link">
                 <Link className="nav-link" to={"/salesByProduct"}>
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Top 10</span></Link>
+                        <span>Venta en unidades</span></Link>
                 </li>
 
 
@@ -66,7 +66,7 @@ function SideBar(){
                  {/*<!-- Nav Item - Search -->*/}
                  <li className="nav-item nav-link">
                 <Link className="nav-link" to={"/SearchResults"}>
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i className="fa-solid fa-magnifying-glass"></i>
                         <span>Search</span></Link>
                 </li>
 

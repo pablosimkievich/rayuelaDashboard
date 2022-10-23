@@ -26,7 +26,8 @@ function Chart (){
             <div className="card-body">
                 <div className="table-responsive">
                 <div className="col-12">
-							<h2>Juguetes</h2>
+							<h2>Juguetes <a href='http://localhost:3001/crear-producto'target="_blank" rel='noreferrer'><button className="btn btn-info">Crear</button></a></h2>
+                            
 						</div>
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>

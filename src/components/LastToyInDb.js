@@ -33,7 +33,7 @@ function LastToyInDb(){
                     </div>
                     <p>{juguetes[juguetes.length-1].name}</p>
                     <p>{juguetes[juguetes.length-1].description}</p>
-                    <Link className="btn btn-danger" to={juguetes[juguetes.length-1].id} >View detail</Link>
+                    <a className="btn btn-danger" href={`http://localhost:3001/juguetes/${juguetes[juguetes.length-1].id}`} target="_blank" rel='noreferrer'>View detail</a>
                 </div>
                 :null
             }

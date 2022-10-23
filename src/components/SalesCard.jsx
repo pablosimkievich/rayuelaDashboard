@@ -17,6 +17,9 @@ const salesApi =  async () => {
    
     }, [setSales]);
 
+   let uVendidas = sales.map(e=>{return e.unidadesVendidasXProducto}).length? sales.map(e=>{return e.unidadesVendidasXProducto}).reduce((pv,cv)=> pv +cv): 0;
+   console.log(uVendidas)
+
         return(
                 <div className="col-md-4 mb-4">
                         <div className={`card border-left-success shadow h-100 py-2`}>
@@ -24,7 +27,7 @@ const salesApi =  async () => {
                                 <div className="row no-gutters align-items-center">
                                     <div className="col mr-2">
                                         <div className={`text-xs font-weight-bold text-success text-uppercase mb-1`}> Unidades vendidas</div>
-                                        <div className="h5 mb-0 font-weight-bold text-gray-800">89</div>
+                                        <div className="h5 mb-0 font-weight-bold text-gray-800">{`${uVendidas}`}</div>
                                     </div>
                                     <div className="col-auto">
                                         <i className="fas fa-clipboard-list fa-2x text-gray-600"></i>
@@ -41,8 +44,8 @@ const salesApi =  async () => {
                                         </thead>
                                                     
                                     
-                                    { 
-                                        sales.map( (element , i) => {
+                                   <tbody>
+                                   { sales.map( (element , i) => {
                                         let salesRow = {
                                             Id: element.id,
                                             Name: element.productName,
@@ -52,8 +55,8 @@ const salesApi =  async () => {
                                       
                                         return <SalesRow {
                                             ...salesRow} key={i}/>
-                                    })
-                                        }
+                                    })}
+                                       </tbody> 
                                                     
                                     
 

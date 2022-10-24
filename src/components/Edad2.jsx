@@ -35,7 +35,7 @@ function Edad2 (){
                                 <th>Categoias</th>
                                 <th>Descripcion</th>
                                 <th>Editar</th>
-                                <th>Borrar</th>
+                                
                             </tr>
                         </thead>
                         
@@ -75,7 +75,7 @@ function Edad2 (){
                                 <th>Categorias</th>
                                 <th>Descripcion</th>
                                 <th>Editar</th>
-                                <th>Borrar</th>
+                               
                             </tr>
                         </tfoot>
                     </table>

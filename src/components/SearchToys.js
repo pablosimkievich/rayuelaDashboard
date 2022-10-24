@@ -1,7 +1,7 @@
 import React from 'react';
 //import noPoster from '../assets/images/no-poster.jpg';
 import {useState, useEffect} from 'react';
-import axios from 'axios'
+import axios from 'axios';
 
 function SearchToys(){
 	
@@ -29,20 +29,16 @@ const handelInputChange = (e)=>{
 				console.log(resultados)
 				
 		}
-{/*	const handleResults = async () => {
-		products.filter(e => e.name === keyword)
 
-	}}
-*/}
 			
 	
 
 
 	useEffect(() => {
 	products();
-	//cuando se monta el componente llamo a mi api
+	
 	 }, 
-	 [setResults,keyword]);
+	 [setResults, keyword]);
 	
 
 	return(
@@ -83,7 +79,7 @@ const handelInputChange = (e)=>{
 														style={{ width: '100%', height: '150px', objectFit: 'cover' }} 
 													/>
 												</div>
-												<p>{toy.price}</p>
+												<p className="text-center">Id: {toy.id}</p>
 											</div>
 										</div>
 									</div>
@@ -91,7 +87,8 @@ const handelInputChange = (e)=>{
 							})
 						}
 					</div>
-					{ results && <div className="alert alert-warning text-center">No se encontraron juguetes</div>}
+					{
+				keyword && results && !results.length ? <div className="alert alert-warning text-center">No se encontraron juguetes</div> : <div></div>}
 				</>
 					
 

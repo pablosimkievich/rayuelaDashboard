@@ -10,7 +10,7 @@ function ContentRowDataCards(){
 
     const products =  async () => {
         const json = await axios("http://localhost:3001/api/products");//pego a mi api
-            {/* console.log(json) */}
+            
         setJuguetes(json.data.products);};
     
     const usuarios =  async () => {
@@ -28,18 +28,18 @@ function ContentRowDataCards(){
             products();
             usuarios();
             ventas();
-            console.log(orders)
+            
             
         }, [setJuguetes, setUsers, setOrders]);
 
      let salesInDB = {
         title: 'Total de Ventas',
-        color: 'primary', 
-        cuantity: `${orders.totalSales}$`,
+        color: 'info', 
+        cuantity: `$ ${orders.totalSales}`,
         icon: 'fa-clipboard-list'
     }
     
-    /* <!-- Total awards --> */
+    
     
     let productsInDB = {
         title:'Productos en Data Base', 
@@ -48,7 +48,7 @@ function ContentRowDataCards(){
         icon:'fa-award'
     }
     
-    /* <!-- Users quantity --> */
+
     
     let usersInDB = {
         title:'Usuarios en Data Base' ,

@@ -1,20 +1,20 @@
 import React from 'react';
-import ChartRow from './ChartRow';
+import ChartRow from './productTables/ChartRow';
 import axios from 'axios';
 import {useEffect, useState} from 'react';
 
-function Sensoriales(){
-    const [dataSensoriales, setDataSensoriales] = useState([]);
+function Edad1 (){
+    const [dataAges1, setDataAges1] = useState([]);
     const products =  async () => {
         const json = await axios("http://localhost:3001/api/products");//pego a mi api
             {/* console.log(json) */}
-        setDataSensoriales(json.data.juguetesXCategoria.sensoriales);
+            setDataAges1 (json.data.juguetesXEdad.ages1);
         }
 
         useEffect(() => {
             products();
-            console.log(dataSensoriales)
-        }, [setDataSensoriales]);
+            console.log(dataAges1)
+        }, [setDataAges1]);
 			
 
     return (
@@ -42,7 +42,7 @@ function Sensoriales(){
                              {
                                     
 
-                            dataSensoriales.map( ( e , i) => {
+                                dataAges1.map( ( e , i) => {
                                 let row = {
                                     Id: e.id, 
                                     Name: e.name, 
@@ -86,5 +86,4 @@ function Sensoriales(){
    
 }
 
-export default Sensoriales;
-					
+export default Edad1;

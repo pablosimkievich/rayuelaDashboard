@@ -29,11 +29,11 @@ function LastToyInDb(){
           {     juguetes && juguetes[juguetes.length-1]?
                 <div className="card-body">
                     <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={juguetes[juguetes.length-1].img} alt=" Star Wars - Mandalorian "/>
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={juguetes[juguetes.length-1].img} alt={juguetes[juguetes.length-1].name}/>
                     </div>
                     <p>{juguetes[juguetes.length-1].name}</p>
                     <p>{juguetes[juguetes.length-1].description}</p>
-                    <Link className="btn btn-danger" to={juguetes[juguetes.length-1].id} >View detail</Link>
+                    <a className="btn btn-danger" href={`http://localhost:3001/juguetes/${juguetes[juguetes.length-1].id}`} target="_blank" rel='noreferrer'>View detail</a>
                 </div>
                 :null
             }

@@ -8,7 +8,7 @@ function CategoriesInDb() {
   const [ ages, setAges] = useState();
 
     const getCategorias =  async () => {
-        const json = await axios("http://localhost:3001/api/products");//pego a mi api
+        const json = await axios("https://rayuela.onrender.com/api/products");//pego a mi api
         
         setCategorias(json.data.countByCategory);
         setAges(json.data.countByAges);

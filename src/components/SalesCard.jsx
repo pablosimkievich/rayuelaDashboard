@@ -7,7 +7,7 @@ import SalesRow from './SalesRow';
 function SalesCard(){
     const [sales, setSales] = useState([]);
 const salesApi =  async () => {
-    const json = await axios("http://localhost:3001/api/sales");//pego a mi api
+    const json = await axios("https://rayuela.onrender.com/api/sales");//pego a mi api
         
         setSales(json.data.productOrders);};
 

@@ -10,7 +10,7 @@ import axios from 'axios';
 function Chart (){
     const [data, setData] = useState([]);
     const products =  async () => {
-        const json = await axios("http://localhost:3001/api/products");//pego a mi api
+        const json = await axios("https://rayuela.onrender.com/api/products");//pego a mi api
             {/* console.log(json) */}
         setData(json.data.products);};
 
@@ -26,7 +26,7 @@ function Chart (){
             <div className="card-body">
                 <div className="table-responsive">
                 <div className="col-12">
-							<h2>Juguetes <a href='http://localhost:3001/crear-producto'target="_blank" rel='noreferrer'><button className="btn btn-info">Crear</button></a></h2>
+							<h2>Juguetes <a href='https://rayuela.onrender.com/crear-producto'target="_blank" rel='noreferrer'><button className="btn btn-info">Crear</button></a></h2>
                             
 						</div>
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
@@ -49,7 +49,7 @@ function Chart (){
                                     Age: e.age, 
                                     Categories: e.category,
                                     Description: e.description,
-                                    Edit: `http://localhost:3001/edit/${e.id}`,
+                                    Edit: `https://rayuela.onrender.com/edit/${e.id}`,
                                   
                                 }
                                 console.log(data)

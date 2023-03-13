@@ -8,7 +8,7 @@ function LastToyInDb(){
 	const [juguetes, setJuguetes] = useState([]);
 
     const products =  async () => {
-        const json = await axios("http://localhost:3001/api/products");//pego a mi api
+        const json = await axios("https://rayuela.onrender.com/api/products");//pego a mi api
         console.log(json)
         setJuguetes(json.data.products);}
 
@@ -33,7 +33,7 @@ function LastToyInDb(){
                     </div>
                     <p>{juguetes[juguetes.length-1].name}</p>
                     <p>{juguetes[juguetes.length-1].description}</p>
-                    <a className="btn btn-danger" href={`http://localhost:3001/juguetes/${juguetes[juguetes.length-1].id}`} target="_blank" rel='noreferrer'>View detail</a>
+                    <a className="btn btn-danger" href={`https://rayuela.onrender.com/juguetes/${juguetes[juguetes.length-1].id}`} target="_blank" rel='noreferrer'>View detail</a>
                 </div>
                 :null
             }

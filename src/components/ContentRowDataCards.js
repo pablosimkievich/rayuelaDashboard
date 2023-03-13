@@ -9,17 +9,17 @@ function ContentRowDataCards(){
     const [orders, setOrders] = useState([]);
 
     const products =  async () => {
-        const json = await axios("http://localhost:3001/api/products");//pego a mi api
+        const json = await axios("https://rayuela.onrender.com/api/products");//pego a mi api
             
         setJuguetes(json.data.products);};
     
     const usuarios =  async () => {
-        const json = await axios("http://localhost:3001/api/users");//pego a mi api
+        const json = await axios("https://rayuela.onrender.com/api/users");//pego a mi api
         
         setUsers(json.data.users);}
 
     const ventas = async () => {
-              const json = await axios("http://localhost:3001/api/orders");//pego a mi api
+              const json = await axios("https://rayuela.onrender.com/api/orders");//pego a mi api
                 setOrders(json.data);
                 console.log(json.data)
         }

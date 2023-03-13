@@ -10,7 +10,7 @@ import axios from 'axios';
 function Orders (){
     const [ordersData, setOrderData] = useState([]);
     const ordersApi =  async () => {
-        const json = await axios("http://localhost:3001/api/orders");//pego a mi api
+        const json = await axios("https://rayuela.onrender.com/api/orders");//pego a mi api
             console.log(json.data)
             setOrderData(json.data.orders);};
 

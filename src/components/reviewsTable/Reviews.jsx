@@ -16,13 +16,13 @@ function Reviews( ){
 
 
     const getProducts =  async () => {
-        const json = await axios("http://localhost:3001/api/products");//pego a mi api
+        const json = await axios("https://rayuela.onrender.com/api/products");//pego a mi api
         const product1 = json.data.products.find(product => product.id === parseInt(id))
         setProducts(product1);
         }
      
     const usersInfo =  async () => {
-            const json = await axios("http://localhost:3001/api/users");//pego a mi api
+            const json = await axios("https://rayuela.onrender.com/api/users");//pego a mi api
               
                 setUsers(json.data.users);};
         

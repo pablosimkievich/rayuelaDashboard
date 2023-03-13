@@ -6,7 +6,7 @@ import {useEffect, useState} from 'react';
 function Edad4 (){
     const [dataAges4, setDataAges4] = useState([]);
     const products =  async () => {
-        const json = await axios("http://localhost:3001/api/products");//pego a mi api
+        const json = await axios("https://rayuela.onrender.com/api/products");//pego a mi api
             {/* console.log(json) */}
             setDataAges4 (json.data.juguetesXEdad.ages4);
         }
@@ -54,7 +54,7 @@ function Edad4 (){
                                     Age: e.age, 
                                     Categories: e.category,
                                     Description: e.description,
-                                    Edit: `http://localhost:3001/edit/${e.id}`
+                                    Edit: `https://rayuela.onrender.com/edit/${e.id}`
                                 }
                                
                                 return <ChartRow {

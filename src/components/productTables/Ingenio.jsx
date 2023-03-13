@@ -7,7 +7,7 @@ import {useEffect, useState} from 'react';
 function Ingenio(){
     const [dataIngenio, setdataIngenio] = useState([]);
     const products =  async () => {
-        const json = await axios ("http://localhost:3001/api/products");//pego a mi api
+        const json = await axios ("https://rayuela.onrender.com/api/products");//pego a mi api
             
         setdataIngenio(json.data.juguetesXCategoria.ingenio);
         }
@@ -47,7 +47,7 @@ function Ingenio(){
                                     Age: e.age, 
                                     Categories: e.category,
                                     Description: e.description,
-                                    Edit: `http://localhost:3001/edit/${e.id}`,
+                                    Edit: `https://rayuela.onrender.com/edit/${e.id}`,
                                   
                                 }
                                

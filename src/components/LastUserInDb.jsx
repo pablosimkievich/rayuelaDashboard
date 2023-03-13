@@ -8,7 +8,7 @@ function LastUserInDb(){
 	const [users, setUsers] = useState([]);
 
     const usersInformation =  async () => {
-        const json = await axios("http://localhost:3001/api/users");//pego a mi api
+        const json = await axios("https://rayuela.onrender.com/api/users");//pego a mi api
       
         setUsers(json.data.users);}
 

@@ -10,7 +10,7 @@ import axios from 'axios';
 function Users (){
     const [usersData, setUsersData] = useState([]);
     const usersInfo =  async () => {
-        const json = await axios("http://localhost:3001/api/users");//pego a mi api
+        const json = await axios("https://rayuela.onrender.com/api/users");//pego a mi api
             console.log(json.data)
             setUsersData(json.data.users);};
 

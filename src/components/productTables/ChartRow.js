@@ -14,7 +14,7 @@ function ChartRow(props){
                         <img src={`${props.Img}`}  alt='juguete' style={{width: 50+ 'px'}}/>
                         </td>
                     <td>
-                        <a href={`http://localhost:3001/juguetes/${props.Id}`} target="_blank" rel='noreferrer'>{props.Name}</a>
+                        <a href={`https://rayuela.onrender.com/juguetes/${props.Id}`} target="_blank" rel='noreferrer'>{props.Name}</a>
                         </td>
                     <td>
                         {`${props.Rating}`!=="No reviews"?

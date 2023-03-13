@@ -21,7 +21,7 @@ const handelInputChange = (e)=>{
 	};
 
 	const products =  async () => {
-		const json = await axios("http://localhost:3001/api/products")
+		const json = await axios("https://rayuela.onrender.com/api/products")
 		let resultados = json.data.products.filter(element => {
 										return element.name.toLowerCase().includes(`${keyword}`)})
 			setResults(resultados)

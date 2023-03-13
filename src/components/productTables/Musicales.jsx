@@ -6,7 +6,7 @@ import {useEffect, useState} from 'react';
 function Musicales(){
     const [dataMusicales, setdataMusicales] = useState([]);
     const products =  async () => {
-        const json = await axios("http://localhost:3001/api/products");//pego a mi api
+        const json = await axios("https://rayuela.onrender.com/api/products");//pego a mi api
             {/* console.log(json) */}
         setdataMusicales(json.data.juguetesXCategoria.musicales);
         }
@@ -53,7 +53,7 @@ function Musicales(){
                                     Age: e.age, 
                                     Categories: e.category,
                                     Description: e.description,
-                                    Edit: `http://localhost:3001/edit/${e.id}`
+                                    Edit: `https://rayuela.onrender.com/edit/${e.id}`
                                 }
                                
                                 return <ChartRow {

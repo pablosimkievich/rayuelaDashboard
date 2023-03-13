@@ -7,7 +7,7 @@ import {useEffect, useState} from 'react';
 function Movimientos(){
     const [dataMovimientos, setDataMovimientos] = useState([]);
     const products =  async () => {
-        const json = await axios("http://localhost:3001/api/products");//pego a mi api
+        const json = await axios("https://rayuela.onrender.com/api/products");//pego a mi api
             
         setDataMovimientos(json.data.juguetesXCategoria.movimientos);
         }
@@ -47,8 +47,8 @@ function Movimientos(){
                                     Age: e.age, 
                                     Categories: e.category,
                                     Description: e.description,
-                                    Edit: `http://localhost:3001/edit/${e.id}`,
-                                    Delete: `http://localhost:3001/${e.id}?_method=DELETE`
+                                    Edit: `https://rayuela.onrender.com/edit/${e.id}`,
+                                    Delete: `https://rayuela.onrender.com/${e.id}?_method=DELETE`
                                 }
                                
                                 return <ChartRow {

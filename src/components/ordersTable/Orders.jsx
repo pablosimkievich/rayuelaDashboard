@@ -40,13 +40,13 @@ function Orders (){
                             ordersData.map( ( element , i) => {
                                 let orderRow = {
                                     Id: element.id,
-                                    URLCliente: `http://localhost:3001/user/${element.users.id}`,
+                                    URLCliente: `https://rayuela.onrender.com/user/${element.users.id}`,
                                     Cliente: element.users.user_first_name + ' ' +element.users.user_last_name, 
                                     Fecha: element.order_date,
                                     Total: element.order_total_amt,
                                     Estado: element.order_status, 
                                     MPago: element.payment_method,
-                                    Detalle:  `http://localhost:3001/order-detail/${element.id}`
+                                    Detalle:  `https://rayuela.onrender.com/order-detail/${element.id}`
                                     
                                 }
                               

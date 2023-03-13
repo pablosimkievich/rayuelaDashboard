@@ -7,7 +7,7 @@ function ReviewTableRow(props){
                 <tr>
                     <td>{props.Id}</td>
                     <td>
-                        <a href={`http://localhost:3001/user/${props.UserId}`}  target="_blank" rel='noreferrer'>{props.User}</a>
+                        <a href={`https://rayuela.onrender.com/user/${props.UserId}`}  target="_blank" rel='noreferrer'>{props.User}</a>
                         </td>
                     <td>
                     <div className="stars-outer" >      
